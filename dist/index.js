@@ -12097,8 +12097,8 @@ async function deletePrereleases() {
     for (const release of releases) {
       if (release.prerelease) {
         await github.repos.deleteRelease({
-          owner: orgName,
-          repo: repoName,
+          owner,
+          repo,
           release_id: release.id
         });
         console.log(`Deleted release: ${release.tag_name}`);
