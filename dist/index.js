@@ -12096,7 +12096,7 @@ async function deletePrereleases() {
 
     for (const release of releases) {
       if (release.prerelease) {
-        await octokit.repos.deleteRelease({
+        await github.repos.deleteRelease({
           owner: orgName,
           repo: repoName,
           release_id: release.id
