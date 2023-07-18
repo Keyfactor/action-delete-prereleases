@@ -1,0 +1,10 @@
+name: 'Delete Prereleases'
+description: 'Delete the prereleases for this repository'
+inputs:
+  repo-token: 
+    description: 'GitHub Token with appropriate permissions'
+    required: true
+
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
