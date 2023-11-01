@@ -33,10 +33,8 @@ async function deletePrereleases() {
 
     if (deletedReleases.length > 0) {
       console.log(`The following prereleases were deleted:\n${deletedReleases}`);
-      core.setOutput(`The following prereleases were deleted:\n${deletedReleases}`);
     } else {
       console.log(`No prereleases found`);
-      core.setOutput(`No prereleases found`);
     }
   } catch (error) {
     console.error('Error occurred:', error);
