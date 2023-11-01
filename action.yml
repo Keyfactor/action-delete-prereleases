@@ -4,7 +4,9 @@ inputs:
   repo-token: 
     description: 'GitHub Token with appropriate permissions'
     required: true
-
+outputs:
+  deleted-prereleases:
+    description: 'The list of deleted prereleases'
 runs:
   using: 'node16'
   main: 'dist/index.js'
