@@ -5,7 +5,7 @@ const { Octokit } = require('@octokit/rest');
 
 const jsonPath = core.getInput('input-file');
 const token = core.getInput('repo-token');
-
+const REL_VER = core.getInput('REL_VER');
 const github = new Octokit({ auth: token });
 const { owner, repo } = context.repo;
 
@@ -20,7 +20,7 @@ async function deletePrereleases() {
     });
 
     for (const release of releases) {
-      if (release.prerelease) {
+      if ((release.prerelease) && (release.name.startsWith(REL_VER))) {
         await github.repos.deleteRelease({
           owner,
           repo,

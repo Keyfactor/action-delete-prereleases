@@ -4,6 +4,9 @@ inputs:
   repo-token: 
     description: 'GitHub Token with appropriate permissions'
     required: true
+  REL_VER: 
+    description: 'Released major.minor version'
+    required: true
 runs:
   using: 'node16'
   main: 'dist/index.js'
