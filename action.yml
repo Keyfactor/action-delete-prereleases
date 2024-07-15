@@ -4,7 +4,7 @@ inputs:
   repo-token: 
     description: 'GitHub Token with appropriate permissions'
     required: true
-  REL_VER: 
+  release_version: 
     description: 'Released major.minor version'
     required: true
 runs:

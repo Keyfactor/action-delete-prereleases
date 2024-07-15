@@ -30921,7 +30921,7 @@ const { Octokit } = __nccwpck_require__(9351);
 
 const jsonPath = core.getInput('input-file');
 const token = core.getInput('repo-token');
-const REL_VER = core.getInput('REL_VER');
+const release_version = core.getInput('release_version');
 const github = new Octokit({ auth: token });
 const { owner, repo } = context.repo;
 
@@ -30936,7 +30936,7 @@ async function deletePrereleases() {
     });
 
     for (const release of releases) {
-      if ((release.prerelease) && (release.name.startsWith(REL_VER))) {
+      if ((release.prerelease) && (release.name.startsWith(release_version))) {
         await github.repos.deleteRelease({
           owner,
           repo,
