@@ -30937,10 +30937,10 @@ async function deletePrereleases() {
 
     for (const release of releases) {
       // Debug
-      console.log(`Checking for ${release_version} in: ${release.name}`);
-      if ((release.prerelease) && (release.name.startsWith(release_version))) {
+      console.log(`Checking for ${release_version} in: ${release.tag_name}`);
+      if ((release.prerelease) && (release.tag_name.startsWith(release_version))) {
         // Debug
-        console.log(`Matched ${release_version}  in: ${release.name}`);
+        console.log(`Matched ${release_version}  in: ${release.tag_name}`);
         await github.repos.deleteRelease({
           owner,
           repo,
